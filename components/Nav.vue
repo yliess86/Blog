@@ -45,9 +45,6 @@ nav {
 #nav-routes {
   font-size: 1em;
 }
-#nav-routes .route {
-  margin-left: 1em;
-}
 a {
   color: var(--on-dark-secondary);
   font-weight: 400;
@@ -60,5 +57,29 @@ a:hover {
 .nuxt-link-exact-active {
   color: var(--on-dark-primary);
   font-weight: 600;
+}
+.route {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  #nav-wrapper {
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+  }
+  #nav-logo {
+    text-align: center;
+  }
+  #nav-routes {
+    font-size: 1.5em;
+    text-align: center;
+  }
+  .route {
+    display: block;
+    margin-top: 1.5em;
+    margin-left: 0;
+  }
 }
 </style>

@@ -22,16 +22,16 @@
       </a>
     </div>
 
+    <h2>Research</h2>
+    <p>
+      In the
+      <nuxt-link to="/research">research section</nuxt-link>, you will find links to my academic research publications.
+    </p>
+
     <h2>Blog</h2>
     <p>
       In my
       <nuxt-link to="/blog">blog</nuxt-link>, I share my thoughts on subjects related to my research topic, passions, as well as some experiments or notes.
-    </p>
-
-    <h2>Research</h2>
-    <p>
-      In the
-      <nuxt-link to="/research">research</nuxt-link>section you will find links to my academic research publications.
     </p>
   </div>
 </template>
@@ -60,8 +60,24 @@ export default {
 </script>
 
 <style scoped>
-#contacts .icon {
+.icon {
   font-size: 1.5em;
   margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  #contacts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 70%;
+    margin: 2em auto;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .icon {
+    margin-right: 0;
+    font-size: 2em;
+  }
 }
 </style>

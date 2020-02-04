@@ -117,23 +117,6 @@ blockquote:before {
     background-color: var(--secondary);
 }
 
-.content {
-    margin: 4em auto;
-    width: 60%;
-}
-
-.content img {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    border-radius: var(--border-radius);
-}
-
-.date {
-    font-size: .8em;
-    font-weight: 200;
-}
-
 ::-webkit-scrollbar {
     width: 0.6em;
     height: 0.6em;
@@ -150,6 +133,35 @@ blockquote:before {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
+}
+
+.content {
+    margin: 4em auto;
+    width: 60%;
+}
+@media only screen and (max-width: 768px) {
+    .content {
+        margin: 1em auto;
+        margin-top: 0;
+        width: 90%;
+    }
+}
+@media only screen and (min-width: 1300px) {
+    .content {
+        width: 50%;
+    }
+}
+
+.content img {
+    width: 100%;
+    margin: 2em auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+.date {
+    font-size: .8em;
+    font-weight: 200;
 }
 
 page-enter-active, .page-leave-active {
