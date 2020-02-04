@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,200i,400,400i,600,600i,800,800i&display=swap');
+@import "~/node_modules/highlight.js/styles/dracula.css";
+
+:root {
+    --background-primary: #000000;
+    --background-secondary: rgba(255, 255, 255, 0.1);
+
+    --primary: #88E2F2;
+    --secondary: #F478C5;
+
+    --on-dark-primary: #ffffff;
+    --on-dark-secondary: #e4e4e4;
+
+    --on-light-primary: #000000;
+    --on-light-secondary: #222222;
+
+    --border-radius: .5em;
+    --transition: .4s;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    position: relative;
+    background-color: var(--background-primary);
+    
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.4em;
+    color: var(--on-dark-secondary);
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 3em;
+    line-height: 1.2em;
+    color: var(--on-dark-primary);
+    margin: 1em 0;
+}
+h2 {
+    font-weight: 800;
+    font-size: 2em;
+    line-height: 1.2em;
+    color: var(--on-dark-primary);
+    margin: 1em 0;
+}
+h3 {
+    font-weight: 800;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: var(--on-dark-primary);
+    margin: 1em 0;
+}
+p {
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.4em;
+    text-align: justify;
+    margin: 1em 0;
+}
+a, strong {
+    font-weight: 600;
+    font-size: 1em;
+}
+hr {
+    border-color: var(--on-dark-secondary);
+}
+
+pre {
+    border-radius: var(--border-radius);
+    background-color: var(--background-secondary);
+    margin: 1.5em 0;
+}
+.hljs {
+    padding: 1em 1.5em;
+    background-color: var(--background-secondary);
+}
+code {
+    font-weight: 400;
+    font-size: 1em;
+    padding: .2em .8em;
+    
+    border-radius: var(--border-radius);
+    background-color: var(--background-secondary);
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+a:hover {
+    color: var(--on-dark-primary);
+}
+
+blockquote {
+    position: relative;
+    padding: .5em 1.5em;
+
+    border-radius: var(--border-radius);
+    background-color: var(--background-secondary);
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+blockquote:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: .5em;
+    height: 100%;
+    background-color: var(--secondary);
+}
+
+.content {
+    margin: 4em auto;
+    width: 60%;
+}
+
+.content img {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+.date {
+    font-size: .8em;
+    font-weight: 200;
+}
+
+::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em;
+    transition: var(--transition);
+}
+::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+    transition: var(--transition);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--on-light-secondary);
+    transition: var(--transition);
+    border-radius: 1em;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+page-enter-active, .page-leave-active {
+    transition: all .30s ease-out;
+}
+.page-enter, .page-leave-active {
+    opacity: 0;
+    transform-origin: 50% 50%;
+}
