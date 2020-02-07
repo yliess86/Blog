@@ -20,6 +20,7 @@ nav {
   width: 100%;
 
   background-color: var(--background-secondary);
+  overflow: hidden;
 }
 #nav-wrapper {
   display: flex;
@@ -46,17 +47,15 @@ nav {
   font-size: 1em;
 }
 a {
-  color: var(--on-dark-secondary);
+  color: var(--on-dark-third);
   font-weight: 400;
   height: 100%;
 }
 a:hover {
   color: var(--secondary);
-  font-weight: 600;
 }
 .nuxt-link-exact-active {
   color: var(--on-dark-primary);
-  font-weight: 600;
 }
 .route {
   display: inline-block;

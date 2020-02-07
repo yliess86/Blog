@@ -4,6 +4,10 @@
       <p class="date">
         Published on
         <time>{{ require('moment')(attributes.date).format('YYYY/MM/DD') }}</time>
+        <span>
+          <fa class="icon" :icon="faStopwatch" />
+          {{attributes.read}}
+        </span>
       </p>
       <h1>{{ attributes.title }}</h1>
       <blockquote>{{ attributes.description }}</blockquote>
@@ -13,11 +17,16 @@
 </template>
 
 <script>
+import { faStopwatch } from "@fortawesome/free-solid-svg-icons";
+
+let hljs = require("markdown-it-highlightjs");
+let kt = require("katex");
+let tm = require("markdown-it-texmath").use(kt);
+
 const fm = require("front-matter");
-const md = require("markdown-it")({
-  html: true,
-  typographer: true
-}).use(require("markdown-it-highlightjs"), { auto: true });
+const md = require("markdown-it")({ html: true, typographer: true })
+  .use(hljs, { auto: true })
+  .use(tm, { delimiters: "dollars", macros: { "\\RR": "\\mathbb{R}" } });
 
 export default {
   async asyncData({ params }) {
@@ -25,6 +34,12 @@ export default {
     let res = fm(fileContent.default);
 
     return { attributes: res.attributes, content: md.render(res.body) };
+  },
+
+  computed: {
+    faStopwatch() {
+      return faStopwatch;
+    }
   },
 
   head() {
@@ -53,5 +68,11 @@ h1 {
 }
 .description {
   margin-bottom: 4em;
+}
+.date span {
+  margin-left: 1em;
+}
+.date span .icon {
+  margin-right: 0.2em;
 }
 </style>

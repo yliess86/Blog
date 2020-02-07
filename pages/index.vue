@@ -1,15 +1,30 @@
 <template>
   <div class="content">
     <h1>Home</h1>
+    <img src="https://avatars1.githubusercontent.com/u/22802760" />
 
     <h2>Who Am I?</h2>
     <p>
       I am a PhD Student at the
-      <a href="http://dvic.devinci.fr/">De Vinci Innovation Center</a> in the Human Computer Interaction Group.
+      <a href="http://dvic.devinci.fr/">De Vinci Innovation Center</a> in the
+      <strong>Human-Computer Interaction</strong> group.
     </p>
-    <p>In my research, I explore the use of Artificial Intelligence, and expecially its subfield Deep Learning, to develop new kinds of interactions, and/or experiences</p>
-    <p>I am convinced that Open Source and Open Science is the way to go. As many projects tend to stay in a Proof of Concept stage, I always try to make them almost production-ready.</p>
-    <p>I also have a strong interest in Computer Graphics, Video Games, and Drawing.</p>
+    <p>
+      In my research, I explore the use of
+      <strong>Artificial Intelligence</strong>, and expecially its subfield
+      <strong>Deep Learning</strong>, to develop new kinds of interactions, and/or experiences.
+    </p>
+    <p>
+      I am convinced that
+      <strong>Open Source</strong> and
+      <strong>Open Science</strong> is the way to go. As many projects tend to stay in a Proof of Concept stage, I always try to make them almost production-ready.
+    </p>
+    <p>
+      I also have a strong interest in
+      <strong>Computer Graphics</strong>,
+      <strong>Video Games Dev</strong>, and
+      <strong>Digital Drawing</strong>.
+    </p>
     <div id="contacts">
       <a href="https://github.com/yliess86">
         <fa class="icon" :icon="faGithub" />
@@ -64,6 +79,10 @@ export default {
   font-size: 1.5em;
   margin-right: 0.5em;
 }
+img {
+  position: relative;
+  max-width: 25%;
+}
 
 @media only screen and (max-width: 768px) {
   #contacts {
@@ -78,6 +97,9 @@ export default {
   .icon {
     margin-right: 0;
     font-size: 2em;
+  }
+  img {
+    max-width: 50%;
   }
 }
 </style>

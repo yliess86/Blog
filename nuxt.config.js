@@ -1,12 +1,12 @@
 var glob = require('glob');
 
-async function getDynamicPaths(urlFilepathTable) {
+async function getDynamicPaths(urlFilepathTable, cwd, extension) {
     return [].concat(
         ...Object.keys(urlFilepathTable).map(url => {
             var filepathGlob = urlFilepathTable[url];
             return glob
-                .sync(filepathGlob, { cwd: 'posts' })
-                .map(filepath => `${url}/${path.basename(filepath, '.md')}`);
+                .sync(filepathGlob, { cwd: cwd })
+                .map(filepath => `${url}/${path.basename(filepath, extension)}`);
         })
     );
 }
@@ -27,7 +27,11 @@ export default async () => {
             ]
         },
         loading: { color: '#000000' },
-        css: ["~/assets/main.css"],
+        css: [
+            "~/assets/main.css",
+            "~/assets/texmath.css",
+            "~/assets/katex.min.css"
+        ],
         plugins: [],
         buildModules: [],
         modules: [
@@ -39,7 +43,7 @@ export default async () => {
                         icons: ['fas']
                     }
                 ]
-            }]
+            }],
         ],
         build: {
             extend(config, ctx) {
@@ -50,9 +54,7 @@ export default async () => {
             }
         },
         generate: {
-            routes: await getDynamicPaths({
-                '/blog': 'posts/*md'
-            })
+            routes: await getDynamicPaths({ '/blog': 'posts/*md' }, 'posts', '.md')
         },
         pageTransition: {
             name: 'page',
