@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 8
+  - 12
 
 cache:
   directories:
@@ -20,7 +20,7 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_ACCESS_TOKEN
   repo: yliess86/yliess86.github.io
-  taget-branches: master
+  taget-branch: master
   local-dir: dist
   on:
     branch: master
